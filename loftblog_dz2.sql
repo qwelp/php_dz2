@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50545
 File Encoding         : 65001
 
-Date: 2015-09-21 13:05:58
+Date: 2015-09-22 11:15:57
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -141,7 +141,7 @@ CREATE TABLE `product` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(100) DEFAULT NULL COMMENT 'Название товара',
   `mark` varchar(100) DEFAULT NULL COMMENT 'Марка товара',
-  `count` int(10) unsigned DEFAULT NULL COMMENT 'Количество товара на складе',
+  `count` int(10) unsigned DEFAULT '0' COMMENT 'Количество товара на складе',
   `price` float(10,0) unsigned NOT NULL COMMENT 'Цена за единицу товара',
   `description` text COMMENT 'Описание товара',
   `id_catalog` int(11) unsigned NOT NULL COMMENT 'Идентификатор категории',
