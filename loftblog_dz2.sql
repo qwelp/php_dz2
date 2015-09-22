@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50545
 File Encoding         : 65001
 
-Date: 2015-09-22 11:15:57
+Date: 2015-09-22 11:34:33
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -20,10 +20,10 @@ SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
 DROP TABLE IF EXISTS `order`;
 CREATE TABLE `order` (
-  `id` int(11) unsigned NOT NULL COMMENT 'Номер заказа',
-  `id_user` int(11) unsigned DEFAULT NULL COMMENT 'Идентификатор пользователя',
-  `status` int(11) unsigned NOT NULL COMMENT 'Статус пользователя',
-  `date_order` date NOT NULL COMMENT 'Дата формирования заказа',
+  `id` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'Номер заказа',
+  `id_user` int(11) unsigned NOT NULL COMMENT 'Идентификатор пользователя',
+  `status` int(11) unsigned DEFAULT NULL COMMENT 'Статус пользователя',
+  `date_order` timestamp NULL DEFAULT NULL COMMENT 'Дата формирования заказа',
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`) USING BTREE,
   KEY `id_user` (`id_user`) USING BTREE,
@@ -36,36 +36,36 @@ CREATE TABLE `order` (
 -- ----------------------------
 -- Records of order
 -- ----------------------------
-INSERT INTO `order` VALUES ('1', '1', '2', '2015-09-18');
-INSERT INTO `order` VALUES ('2', '1', '2', '2015-09-18');
-INSERT INTO `order` VALUES ('3', '2', '2', '2015-09-12');
-INSERT INTO `order` VALUES ('4', '9', '2', '2015-09-18');
-INSERT INTO `order` VALUES ('5', '6', '4', '2015-09-18');
-INSERT INTO `order` VALUES ('6', '5', '1', '2015-09-18');
-INSERT INTO `order` VALUES ('7', '7', '1', '2015-09-18');
-INSERT INTO `order` VALUES ('8', '10', '1', '2015-09-18');
-INSERT INTO `order` VALUES ('9', '8', '1', '2015-09-18');
-INSERT INTO `order` VALUES ('10', '11', '2', '2015-09-18');
-INSERT INTO `order` VALUES ('11', '12', '2', '2015-09-18');
-INSERT INTO `order` VALUES ('12', '13', '2', '2015-09-18');
-INSERT INTO `order` VALUES ('13', '14', '2', '2015-09-18');
-INSERT INTO `order` VALUES ('14', '15', '2', '2015-09-18');
-INSERT INTO `order` VALUES ('15', '16', '2', '2015-09-18');
-INSERT INTO `order` VALUES ('16', '17', '2', '2015-09-18');
-INSERT INTO `order` VALUES ('17', '18', '2', '2015-09-18');
-INSERT INTO `order` VALUES ('18', '19', '2', '2015-09-18');
-INSERT INTO `order` VALUES ('19', '20', '2', '2015-09-18');
-INSERT INTO `order` VALUES ('20', '21', '1', '2015-09-18');
-INSERT INTO `order` VALUES ('21', '22', '3', '2015-09-18');
-INSERT INTO `order` VALUES ('22', '23', '2', '2015-09-18');
-INSERT INTO `order` VALUES ('23', '24', '1', '2015-09-18');
-INSERT INTO `order` VALUES ('24', '25', '1', '2015-09-18');
-INSERT INTO `order` VALUES ('25', '26', '2', '2015-09-18');
-INSERT INTO `order` VALUES ('26', '27', '1', '2015-09-18');
-INSERT INTO `order` VALUES ('27', '28', '1', '2015-09-18');
-INSERT INTO `order` VALUES ('28', '29', '4', '2015-09-18');
-INSERT INTO `order` VALUES ('29', '1', '1', '2015-09-18');
-INSERT INTO `order` VALUES ('30', '4', '1', '2015-09-18');
+INSERT INTO `order` VALUES ('1', '1', '2', '2015-09-18 00:00:00');
+INSERT INTO `order` VALUES ('2', '1', '2', '2015-09-18 00:00:00');
+INSERT INTO `order` VALUES ('3', '2', '2', '2015-09-12 00:00:00');
+INSERT INTO `order` VALUES ('4', '9', '2', '2015-09-18 00:00:00');
+INSERT INTO `order` VALUES ('5', '6', '4', '2015-09-18 00:00:00');
+INSERT INTO `order` VALUES ('6', '5', '1', '2015-09-18 00:00:00');
+INSERT INTO `order` VALUES ('7', '7', '1', '2015-09-18 00:00:00');
+INSERT INTO `order` VALUES ('8', '10', '1', '2015-09-18 00:00:00');
+INSERT INTO `order` VALUES ('9', '8', '1', '2015-09-18 00:00:00');
+INSERT INTO `order` VALUES ('10', '11', '2', '2015-09-18 00:00:00');
+INSERT INTO `order` VALUES ('11', '12', '2', '2015-09-18 00:00:00');
+INSERT INTO `order` VALUES ('12', '13', '2', '2015-09-18 00:00:00');
+INSERT INTO `order` VALUES ('13', '14', '2', '2015-09-18 00:00:00');
+INSERT INTO `order` VALUES ('14', '15', '2', '2015-09-18 00:00:00');
+INSERT INTO `order` VALUES ('15', '16', '2', '2015-09-18 00:00:00');
+INSERT INTO `order` VALUES ('16', '17', '2', '2015-09-18 00:00:00');
+INSERT INTO `order` VALUES ('17', '18', '2', '2015-09-18 00:00:00');
+INSERT INTO `order` VALUES ('18', '19', '2', '2015-09-18 00:00:00');
+INSERT INTO `order` VALUES ('19', '20', '2', '2015-09-18 00:00:00');
+INSERT INTO `order` VALUES ('20', '21', '1', '2015-09-18 00:00:00');
+INSERT INTO `order` VALUES ('21', '22', '3', '2015-09-18 00:00:00');
+INSERT INTO `order` VALUES ('22', '23', '2', '2015-09-18 00:00:00');
+INSERT INTO `order` VALUES ('23', '24', '1', '2015-09-18 00:00:00');
+INSERT INTO `order` VALUES ('24', '25', '1', '2015-09-18 00:00:00');
+INSERT INTO `order` VALUES ('25', '26', '2', '2015-09-18 00:00:00');
+INSERT INTO `order` VALUES ('26', '27', '1', '2015-09-18 00:00:00');
+INSERT INTO `order` VALUES ('27', '28', '1', '2015-09-18 00:00:00');
+INSERT INTO `order` VALUES ('28', '29', '4', '2015-09-18 00:00:00');
+INSERT INTO `order` VALUES ('29', '1', '1', '2015-09-18 00:00:00');
+INSERT INTO `order` VALUES ('30', '4', '1', '2015-09-18 00:00:00');
 
 -- ----------------------------
 -- Table structure for order_cart
@@ -73,9 +73,9 @@ INSERT INTO `order` VALUES ('30', '4', '1', '2015-09-18');
 DROP TABLE IF EXISTS `order_cart`;
 CREATE TABLE `order_cart` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `id_product` int(11) unsigned DEFAULT NULL COMMENT 'Идентификатор заказа',
-  `price` float(10,0) unsigned NOT NULL COMMENT 'Цена товара',
-  `count` int(10) unsigned NOT NULL COMMENT 'Количество товара в заказе',
+  `id_product` int(11) unsigned NOT NULL COMMENT 'Идентификатор заказа',
+  `price` float(10,0) unsigned DEFAULT NULL COMMENT 'Цена товара',
+  `count` int(10) unsigned DEFAULT NULL COMMENT 'Количество товара в заказе',
   PRIMARY KEY (`id`),
   KEY `id_product` (`id_product`),
   CONSTRAINT `order_cart_ibfk_1` FOREIGN KEY (`id_product`) REFERENCES `product` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
@@ -121,7 +121,7 @@ INSERT INTO `order_cart` VALUES ('30', '12', '16000', '1');
 DROP TABLE IF EXISTS `order_status`;
 CREATE TABLE `order_status` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `title` varchar(50) DEFAULT NULL,
+  `title` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
@@ -139,10 +139,10 @@ INSERT INTO `order_status` VALUES ('4', 'Отгружен');
 DROP TABLE IF EXISTS `product`;
 CREATE TABLE `product` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `title` varchar(100) DEFAULT NULL COMMENT 'Название товара',
-  `mark` varchar(100) DEFAULT NULL COMMENT 'Марка товара',
+  `title` varchar(100) NOT NULL COMMENT 'Название товара',
+  `mark` varchar(100) NOT NULL COMMENT 'Марка товара',
   `count` int(10) unsigned DEFAULT '0' COMMENT 'Количество товара на складе',
-  `price` float(10,0) unsigned NOT NULL COMMENT 'Цена за единицу товара',
+  `price` float(10,0) unsigned DEFAULT NULL COMMENT 'Цена за единицу товара',
   `description` text COMMENT 'Описание товара',
   `id_catalog` int(11) unsigned NOT NULL COMMENT 'Идентификатор категории',
   PRIMARY KEY (`id`),
@@ -186,7 +186,7 @@ INSERT INTO `product` VALUES ('33', 'Фоторамка Ritmix RDF-702', 'Ritmix
 DROP TABLE IF EXISTS `product_catid`;
 CREATE TABLE `product_catid` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `title` varchar(100) DEFAULT NULL COMMENT 'Название категории товаров',
+  `title` varchar(100) NOT NULL COMMENT 'Название категории товаров',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COMMENT='Категории товаров';
 
@@ -209,14 +209,14 @@ INSERT INTO `product_catid` VALUES ('9', 'Цифровые фоторамки');
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) DEFAULT NULL COMMENT 'Имя пользователя',
-  `lastname` varchar(50) DEFAULT NULL COMMENT 'Фамилия пользователя',
-  `birthday` date NOT NULL COMMENT 'Дата рождения пользователя',
-  `email` varchar(100) DEFAULT NULL COMMENT 'Email пользователя',
+  `name` varchar(50) NOT NULL COMMENT 'Имя пользователя',
+  `lastname` varchar(50) NOT NULL COMMENT 'Фамилия пользователя',
+  `birthday` date DEFAULT NULL COMMENT 'Дата рождения пользователя',
+  `email` varchar(100) NOT NULL COMMENT 'Email пользователя',
   `password` char(5) NOT NULL COMMENT 'Пароль пользователя',
   `is_active` tinyint(1) DEFAULT '0' COMMENT 'Активирован или нет аккаунт пользователя',
-  `reg_date` datetime DEFAULT NULL COMMENT 'Дата регистрации',
-  `last_update` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Дата последнего редактирования пользователя',
+  `reg_date` datetime NOT NULL COMMENT 'Дата регистрации',
+  `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Дата последнего редактирования пользователя',
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`),
   KEY `is_active` (`is_active`)
